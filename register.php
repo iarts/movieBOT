@@ -83,6 +83,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Κωδικός</label>
+                                    <input class="input--style-4" type="password" name="password">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Επανάληψη Κωδικού</label>
+                                    <input class="input--style-4" type="password" name="repeat_password">
+                                </div>
+                            </div>
+                        </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Αποθήκευση</button>
                         </div>
