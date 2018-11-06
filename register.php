@@ -58,11 +58,11 @@
                                     <label class="label">Φύλο</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Άνδρας
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" value="m" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Γυναίκα
-                                            <input type="radio" name="gender">
+                                            <input type="radio" value="f" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
