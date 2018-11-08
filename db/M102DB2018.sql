@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 06, 2018 at 02:07 PM
+-- Generation Time: Nov 08, 2018 at 10:52 AM
 -- Server version: 5.7.24-0ubuntu0.18.04.1
 -- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
@@ -69,6 +69,7 @@ CREATE TABLE `users` (
   `users_phone` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `users_email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `users_pass` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `users_token` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `users_register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
