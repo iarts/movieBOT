@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php include "includes/config.php"; ?>
+
 <?php include "includes/head.php"; ?>
 
 <body>
@@ -17,18 +19,23 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="text" name="email" placeholder="Email">
+                                    <input class="input--style-4" type="text" id="username" name="email" onKeyUp="fadeoutl()" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="text" name="password" placeholder="Password">
+                                    <input class="input--style-4" type="text" id="password" name="password" onKeyUp="fadeoutl()" placeholder="Password">
                                 </div>
                             </div>
                         </div>
+                        
+                        <div id="warningl" style="height:0px; transition-property:height; transition-duration:0.5s;">
+                        <div id="messagel" style="display:none; color:#b20000; font-size:12px; padding:10px;"></div>
+                        <div id="messagel1" style="display:none; color:#b20000; font-size:12px; padding:10px;"></div>
+                        
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Σύνδεση</button>
+                            <button class="btn btn--radius-2 btn--blue" type="button" id="login" >Σύνδεση</button>
                         </div>
                     </form>
                 </div>

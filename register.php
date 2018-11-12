@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php include "includes/config.php"; ?>
+
 <?php include "includes/head.php"; ?>
 
 <body>
@@ -17,13 +19,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Όνομα</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" id="first_name" name="first_name" onKeyUp="fadeout()">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Επώνυμο</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" id="last_name" name="last_name" onKeyUp="fadeout()">
                                 </div>
                             </div>
                         </div>
@@ -32,7 +34,7 @@
                                 <div class="input-group">
                                     <label class="label">Ημ/νία Γέννησης</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" id="birthday" name="birthday" onKeyUp="fadeout()">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -57,13 +59,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" id="email" name="email" onKeyUp="fadeout();fadeoutem();" onBlur="checkEmail()">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Τηλέφωνο</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" id="phone" name="phone" onKeyUp="fadeout()">
                                 </div>
                             </div>
                         </div>
@@ -71,18 +73,22 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Κωδικός</label>
-                                    <input class="input--style-4" type="password" name="password">
+                                    <input class="input--style-4" type="password" id="password" name="password" onKeyUp="fadeout()">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Επανάληψη Κωδικού</label>
-                                    <input class="input--style-4" type="password" name="repeat_password">
+                                    <input class="input--style-4" type="password" id="repeat_password" name="repeat_password" onKeyUp="fadeout()">
                                 </div>
                             </div>
                         </div>
+                        
+                        <div id="warning1" style="height:0px; transition-property:height; transition-duration:0.5s;">
+                        <div id="message1" style="display:none; color:#b20000; font-size:12px; padding:10px;"></div>
+                        
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Αποθήκευση</button>
+                            <button class="btn btn--radius-2 btn--blue" type="button" id="register">Αποθήκευση</button>
                         </div>
                     </form>
                 </div>
@@ -96,6 +102,8 @@
     <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <script src="js/global.js"></script>
+    
+    <script src="ajax/ajax.js"></script>
 
 </body>
 
