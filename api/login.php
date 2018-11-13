@@ -8,7 +8,7 @@ if(isset($_POST['login'])){
 	$row_count = mysqli_num_rows($result);
 	if($row_count!=0){
 		echo 'Yes';
-		while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
+		while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 			session_start();
 			$_SESSION['id']=$row['users_id'];
 			$_SESSION['user']=$row['users_email'];

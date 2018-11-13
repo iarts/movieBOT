@@ -58,7 +58,7 @@ if(isset($_POST['register'])){
 						'".mysqli_real_escape_string($link, $random)."',
 						'".mysqli_real_escape_string($link, $_POST['first_name'])."',
 						'".mysqli_real_escape_string($link, $_POST['last_name'])."',
-						'".mysqli_real_escape_string($link, $_POST['birthday'])."',
+						'".mysqli_real_escape_string($link, date("Y-m-d", strtotime($_POST['birthday'])))."',
 						'".mysqli_real_escape_string($link, $_POST['gender'])."',
 						'".mysqli_real_escape_string($link, $_POST['phone'])."')"))
 						{
@@ -67,6 +67,6 @@ if(isset($_POST['register'])){
 						else {
 							echo "error";
 						}
-			
+								
 }
 ?>

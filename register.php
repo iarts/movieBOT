@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'])){
+	header("Location: index.php");
+	die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +20,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Δημιουργία λογαριασμού</h2>
+                    <h2 class="title">Δημιουργία λογαριασμού ή <a href="login.php">Σύνδεση</a></h2>
                     <form method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -59,7 +66,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" id="email" name="email" onKeyUp="fadeout();fadeoutem();" onBlur="checkEmail()">
+                                    <input class="input--style-4" type="email" id="email" name="email" onKeyUp="fadeout();" onBlur="checkEmail()">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -84,12 +91,13 @@
                             </div>
                         </div>
                         
-                        <div id="warning1" style="height:0px; transition-property:height; transition-duration:0.5s;">
-                        <div id="message1" style="display:none; color:#b20000; font-size:12px; padding:10px;"></div>
-                        
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="button" id="register">Αποθήκευση</button>
                         </div>
+                        
+                        <div id="warning" style="height:0px; transition-property:height; transition-duration:0.5s;">
+                        <div id="message" style="display:none; color:#b20000; font-size:12px; padding:10px;"></div>
+                        
                     </form>
                 </div>
             </div>

@@ -8,9 +8,28 @@
 
 			<div class="header-menu">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact Us</a></li>
+					
+					<li class="active"><a href="index.php">Αρχική</a></li>
+
+					<li><a href="contact.php">Επικοινωνία</a></li>
+					
+					<?php
+					session_start();
+					if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'])){
+						?>
+							
+							<li><a href="account.php">Ο λογαριασμός μου</a></li>	
+							<li><a href="api/logout.php">Αποσύνδεση</a></li>
+							
+						<?php
+					}
+					else{
+						?>
+							<li><a href="register.php">Εγγραφή</a></li>
+						<?php
+					}
+					?>
+					
 				</ul>
 			</div>
 

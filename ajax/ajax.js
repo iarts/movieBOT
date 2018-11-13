@@ -74,9 +74,8 @@ $(document).ready(function() {
 	}
 	else{		
 		$.ajax({
-			url:"../api/register.php",
+			url:"api/register.php",
 			type: "POST",
-			async:false,
 			data:{
 				"register":1,
 				"email": email,
@@ -88,6 +87,7 @@ $(document).ready(function() {
 				"first_name": first_name
 			},
 			success: function(data){
+				console.log(data);
 				if(data === "success"){
 					$('#register').trigger("reset");
 					setTimeout(function() {window.location.href='login.php';}, 2000);
@@ -102,7 +102,7 @@ $(document).ready(function() {
 function checkEmail(){
 	var email = $('#email').val();
 	$.ajax({
-		url:"../api/checkEmail.php",
+		url:"api/checkEmail.php",
 		type: "POST",
 		data:{
 			"check_email":1,
@@ -110,9 +110,9 @@ function checkEmail(){
 		},
 		success: function(data){
 			if(data === 'Yes'){
-				document.getElementById('warning1').style.height='20px';
-				$('#message1').show(500);
-				$('#message1').text('Η διεύθυνση email που πληκτρολογήσατε υπάρχει ήδη.');
+				document.getElementById('warning').style.height='20px';
+				$('#message').show(500);
+				$('#message').text('Η διεύθυνση email που πληκτρολογήσατε υπάρχει ήδη.');
 				$('#email').val('');
 			}
 		}
@@ -128,26 +128,26 @@ $(document).ready(function(){
         var dotpos = username.lastIndexOf(".");
 		var password = $('#password').val();
 	if(username==''){
-		document.getElementById('warningl').style.height='35px';
-		$('#messagel').text('Παρακαλώ εισάγετε διεύθυνση email');
-	    $('#messagel').hide().fadeIn(2000);
+		document.getElementById('warning').style.height='35px';
+		$('#message').text('Παρακαλώ εισάγετε διεύθυνση email');
+	    $('#message').hide().fadeIn(2000);
 		return false;
 	}
 	else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=username.length) {
-		document.getElementById('warningl').style.height='35px';
-	    $('#messagel').text('Μη έγκυρη διεύθυνση email');
-	    $('#messagel').hide().fadeIn(2000);
+		document.getElementById('warning').style.height='35px';
+	    $('#message').text('Μη έγκυρη διεύθυνση email');
+	    $('#message').hide().fadeIn(2000);
 		return false;
     }
 	else if(password==''){
-		document.getElementById('warningl').style.height='35px';
-		$('#messagel').text('Παρακαλώ εισάγετε κωδικό');
-	    $('#messagel').hide().fadeIn(2000);
+		document.getElementById('warning').style.height='35px';
+		$('#message').text('Παρακαλώ εισάγετε κωδικό');
+	    $('#message').hide().fadeIn(2000);
 		return false;
 	}
 	else{
 		$.ajax({
-				url:'../api/login.php',
+				url:'api/login.php',
 				type: "POST",
 		        data:{
 			           "login":1,
@@ -156,9 +156,9 @@ $(document).ready(function(){
 		         },
 				success:function(data){
 					if(data === 'No'){
-						document.getElementById('warningl').style.height='35px';
-						$('#messagel').fadeOut(1500);
-						setTimeout(function() {$('#messagel1').text('Προσοχή! Λανθασμένα στοιχεία σύνδεσης').hide().fadeIn();}, 3000);
+						document.getElementById('warning').style.height='35px';
+						$('#message').fadeOut(1500);
+						setTimeout(function() {$('#message').text('Προσοχή! Λανθασμένα στοιχεία σύνδεσης').hide().fadeIn();}, 3000);
 						
 					}
 					else{
@@ -167,9 +167,9 @@ $(document).ready(function(){
 				},
 				 beforeSend:function()
 		   {
-			document.getElementById('warningl').style.height='35px';
-			$("#messagel").html("<img src='images/loader.gif'/>")
-			$('#messagel').hide().fadeIn(1500);
+			document.getElementById('warning').style.height='35px';
+			$("#message").html("<img src='images/loader.gif'/>")
+			$('#message').hide().fadeIn(1500);
 		   }
 			});return false;
 	}
@@ -178,18 +178,6 @@ $(document).ready(function(){
 
 function fadeout(){
 	    document.getElementById('message').style.display='none';
-		document.getElementById('message1').style.display='none';
 		document.getElementById('warning').style.height='0px';
 	}
-
-function fadeoutem(){
-	    document.getElementById('message1').style.display='none';
-		document.getElementById('warning1').style.height='0px';
-	}
-	
-function fadeoutl(){
-	    document.getElementById('messagel').style.display='none';
-		document.getElementById('messagel1').style.display='none';
-		document.getElementById('warningl').style.height='0px';
-	}	
 	

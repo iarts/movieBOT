@@ -1,17 +1,19 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['token'])){
+	header("Location: login.php");
+	die();
+}
+?>
+<!DOCTYPE html>
 <head>
   <title>movieBOT</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">movieBOT</a>
-      </div>
-    </div>
-  </nav>
+  
+  <?php include "includes/header.php"; ?>
 
   <div class="container">
     <div class="jumbotron">
