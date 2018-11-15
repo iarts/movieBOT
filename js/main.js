@@ -19,6 +19,8 @@ output += `
 <img src="${movie.Poster}">
 <h5>${movie.Title}</h5>
 <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Λεπτομέρειες ταινίας</a>
+
+
 </div>
 </div>
 `;

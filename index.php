@@ -25,12 +25,16 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   </div>
 
   <div class="container">
-    <div id="movies" class="row"></div>
+	  <form method="POST">
+			<div id="movies" class="row"></div>
+			<button class="btn btn--radius-2 btn--blue" type="button" id="save_favorites">Αποθήκευση</button>
+		</form>
   </div>
 
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="ajax/ajax.js"></script>
 </body>
 </html>
