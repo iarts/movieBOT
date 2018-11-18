@@ -16,31 +16,8 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <?php include "includes/header.php"; ?>
 
   <div class="container">
-   <button type="button" name="submit" id="submit" class="btn btn-primary">Αποθήκευση</button>
-    <h4 id="result"></h4>
-<script>
-    $(document).ready(function(){
-     $('#submit').click(function(){
-      var insert = [];
-       $('.get_value').each(function(){
-        if($(this).is(":checked"))
-      {
-        insert.push($(this).val());
-     }
-   });
-        insert = insert.toString();
-         $.ajax({
-          url: "insert.php",
-           method: "POST",
-            data:{insert:insert},
-             success:function(data){
-              $('#result').html(data);
-             }
-          });
-       });
-    });
-</script>
 
+    <h4 id="result"></h4>
 
   <div class="container">
     <div class="jumbotron">
@@ -52,7 +29,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   </div>
 
   <div class="container">
-	  <form method="POST">
+		<form method="POST">
 			<div id="movies" class="row"></div>
 			<button class="btn btn--radius-2 btn--blue" type="button" id="save_favorites">Αποθήκευση</button>
 		</form>

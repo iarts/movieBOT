@@ -177,7 +177,27 @@ $(document).ready(function(){
 });
 
 function fadeout(){
-	    document.getElementById('message').style.display='none';
-		document.getElementById('warning').style.height='0px';
+	document.getElementById('message').style.display='none';
+	document.getElementById('warning').style.height='0px';
+}
+
+
+$('#save_favorites').click(function(){
+var insert = [];
+$('.get_value').each(function(){
+	if($(this).is(":checked")){
+		insert.push($(this).val());
 	}
-	
+});
+	insert = insert.toString();
+	console.log(insert);
+	 $.ajax({
+	  url: "api/insert.php",
+	   method: "POST",
+		data:{insert:insert},
+		 success:function(data){
+		  $('#result').html(data);
+		 }
+	  });
+});
+
