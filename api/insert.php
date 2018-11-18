@@ -22,6 +22,10 @@ foreach($selected_movies as $movie){
 	//parse response
 	//.......
 	
+	$title = $resp -> Title;
+	//$gender =
+	
+	
 
 	//insert movie
 	$query_movie = "INSERT INTO movies(movies_imdbID,  ) 
