@@ -28,8 +28,8 @@ foreach($selected_movies as $movie){
 	
 
 	//insert movie
-	$query_movie = "INSERT INTO movies(movies_imdbID,  ) 
-				VALUES ('".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $_POST["insert"])."')";
+	$query_movie = "INSERT INTO movies(movies_imdbID, movies_title  ) 
+				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $title)."')";
 	mysqli_query($link, $query_movie);
 	
 	
