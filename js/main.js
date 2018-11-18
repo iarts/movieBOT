@@ -19,8 +19,33 @@ output += `
 <img src="${movie.Poster}">
 <h5>${movie.Title}</h5>
 <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Λεπτομέρειες ταινίας</a>
+</br></br>
+<p>Παρακαλώ Επιλέψτε Για Την Αποθήκευση Της Ταινίας</p>
+Επιλογή: <input type="checkbox" class="get_value" value="movie">
 
-
+<h4 id="result"></h4>
+ <script>
+  $(document).ready(function(){
+    $('#submit').click(function(){
+     var insert = [];
+      $('.get_value').each(function(){
+       if($(this).is(":checked"))
+        {
+         insert.push($(this).val());
+       }
+    });
+         insert = insert.toString();
+          $.ajax({
+           url: "insert.php",
+            method: "POST",
+             data:{insert:insert},
+              success:function(data){
+               $('#result').html(data);
+             }
+          });
+       });
+    });
+  </script>
 </div>
 </div>
 `;
