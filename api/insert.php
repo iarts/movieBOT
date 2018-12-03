@@ -19,13 +19,23 @@ foreach($selected_movies as $movie){
 	$resp = curl_exec($curl);
 	curl_close($curl);
 	
-	//parse response
-	//.......
-	
+	//movie details
 	$title = $resp -> Title;
-	//$gender =
-	
-	
+	$year = $resp -> Year;
+	$rated = $resp -> Rated;
+	$runtime = $resp -> Runtime;
+	$released = $resp -> Released;
+	$genre = $resp -> Genre;
+	$director = $resp -> Director;
+	$writer = $resp -> Writer;
+	$actors = $resp -> Actors;
+	$plot = $resp -> Plot;
+	$language = $resp -> Language;
+	$country = $resp -> Country;
+	$awards = $resp -> Awards;
+	$poster = $resp -> Poster;
+	$value = $resp -> Value;
+
 
 	//insert movie
 	$query_movie = "INSERT INTO movies(movies_imdbID, movies_title  ) 
@@ -43,4 +53,11 @@ foreach($selected_movies as $movie){
  
  echo "Η Αποθήκευση Έγινε Με Επιτυχία!";
 }
+
+
+	//insert
+	$query_movie = "INSERT INTO movies(movies_id, movies_imdbID  ) 
+				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $movie)."')";
+	mysqli_query($link, $query_movie);
+
 ?>
