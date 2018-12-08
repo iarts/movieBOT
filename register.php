@@ -26,13 +26,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Όνομα</label>
-                                    <input class="input--style-4" type="text" id="first_name" name="first_name" onKeyUp="fadeout()">
+                                    <input class="input--style-4" type="text" id="first_name" name="first_name" onKeyUp="fadeout()"placeholder="Όνομα">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Επώνυμο</label>
-                                    <input class="input--style-4" type="text" id="last_name" name="last_name" onKeyUp="fadeout()">
+                                    <input class="input--style-4" type="text" id="last_name" name="last_name" onKeyUp="fadeout()" placeholder="Επώνυμο">
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'
                                 <div class="input-group">
                                     <label class="label">Ημ/νία Γέννησης</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" id="birthday" name="birthday" onKeyUp="fadeout()">
+                                        <input class="input--style-4 js-datepicker" type="text" id="birthday" name="birthday" onKeyUp="fadeout()" placeholder="Ημ/νία Γέννησης">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -66,13 +66,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" id="email" name="email" onKeyUp="fadeout();" onBlur="checkEmail()">
+                                    <input class="input--style-4" type="email" id="email" name="email" onKeyUp="fadeout();" onBlur="checkEmail()" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Τηλέφωνο</label>
-                                    <input class="input--style-4" type="text" id="phone" name="phone" onKeyUp="fadeout()">
+                                    <input class="input--style-4" type="text" id="phone" name="phone" onKeyUp="fadeout()" placeholder="Τηλέφωνο">
                                 </div>
                             </div>
                         </div>
@@ -80,13 +80,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Κωδικός</label>
-                                    <input class="input--style-4" type="password" id="password" name="password" onKeyUp="fadeout()">
+                                    <input class="input--style-4" type="password" id="password" name="password" onKeyUp="fadeout()" placeholder="Κωδικός">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Επανάληψη Κωδικού</label>
-                                    <input class="input--style-4" type="password" id="repeat_password" name="repeat_password" onKeyUp="fadeout()">
+                                    <input class="input--style-4" type="password" id="repeat_password" name="repeat_password" onKeyUp="fadeout()" placeholder="Επανάληψη Κωδικού">
                                 </div>
                             </div>
                         </div>
