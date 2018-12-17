@@ -62,7 +62,38 @@ if(isset($_POST['register'])){
 						'".mysqli_real_escape_string($link, $_POST['gender'])."',
 						'".mysqli_real_escape_string($link, $_POST['phone'])."')"))
 						{
-						echo "success";
+						
+								$subject = "Εγγραφή στο movieBOT";
+								$to = $_POST['email'];
+													
+                                $msg ="<p>Καλωσήρθατε στο movieBOT ".$_POST['first_name']." ".$_POST['last_name']."</p>";
+								$msg .= "<p>Για να ολοκληρωθεί η εγγραφή σας πατήστε στο παρακάτω σύνδεσμο<br>
+								http://localhost/movieBOT/login.php?q=activate&rand=".$random." </p>";
+								
+								include "../PHPMailer/PHPMailerAutoload.php";
+								$mail = new PHPMailer();
+								$mail->CharSet = 'UTF-8';
+								$mail->isSMTP();
+								$mail->SMTPSecure = 'tls';
+								$mail->SMTPDebug = 0;
+								$mail->Debugoutput = 'html';
+								$mail->Host = "smtp.gmail.com";
+								$mail->Port = "587";
+								$mail->SMTPAuth = true;
+								$mail->Username = "mcs.movie.bot@gmail.com";
+								$mail->Password = "qazxsw!@#123";
+								$mail->setFrom("mcs.movie.bot@gmail.com", "movieBOT");
+								$mail->addAddress($to, $to);
+								$mail->Subject = $subject;
+								$mail->msgHTML($msg);
+								$mail->AltBody = $subject;
+								
+								if (!$mail->send()) {
+									echo "error";
+								} else {
+									 echo "success";
+								}	
+						
 						}
 						else {
 							echo "error";

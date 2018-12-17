@@ -36,10 +36,16 @@ foreach($selected_movies as $movie){
 	$poster = $resp -> Poster;
 	$value = $resp -> Value;
 
-
 	//insert movie
-	$query_movie = "INSERT INTO movies(movies_imdbID, movies_title  ) 
-				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $title)."')";
+	$query_movie = "INSERT INTO `movies`(`movies_imdbID`, `movies_title`,
+	 `movies_genre`, `movies_released`, `movies_rated`, `movies_writer`, `movies_director`,
+	  `movies_actors`, `movies_runtime`, `movies_plot`, `movies_poster`)
+				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $title)."'
+				, '".mysqli_real_escape_string($link, $genre)."', '".mysqli_real_escape_string($link, $released)."'
+				, '".mysqli_real_escape_string($link, $rated)."', '".mysqli_real_escape_string($link, $writer)."'
+				, '".mysqli_real_escape_string($link, $director)."', '".mysqli_real_escape_string($link, $actors)."'
+				, '".mysqli_real_escape_string($link, $runtime)."', '".mysqli_real_escape_string($link, $plot)."'
+				, '".mysqli_real_escape_string($link, $poster)."')";
 	mysqli_query($link, $query_movie);
 	
 	

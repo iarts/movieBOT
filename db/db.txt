@@ -2,3 +2,6 @@ user: userM102
 pass: SH11mtM8Ocqz0AIw!_
 host: localhost
 dbname: M102DB2018
+
+mcs.movie.bot@gmail.com
+qazxsw!@#123
