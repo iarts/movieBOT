@@ -7,7 +7,7 @@
 		<div class="container-fluid">
 			
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">MovieBOT</a>
+				<a class="navbar-brand"> <i class="fas fa-film"></i> <href="#">MovieBOT</a>
 			</div>
 
 			<div class="header-menu">
