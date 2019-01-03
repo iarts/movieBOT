@@ -8,5 +8,9 @@ $curl = curl_init();
 	$resp = curl_exec($curl);
 	curl_close($curl);
 	
-	echo $resp;
+	//echo $resp;
+	
+	$obj = json_decode($resp);
+	print $obj->{'Year'};
+	
 	?>

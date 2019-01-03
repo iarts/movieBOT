@@ -19,22 +19,24 @@ foreach($selected_movies as $movie){
 	$resp = curl_exec($curl);
 	curl_close($curl);
 	
+	$obj = json_decode($resp);
+	
 	//movie details
-	$title = $resp -> Title;
-	$year = $resp -> Year;
-	$rated = $resp -> Rated;
-	$runtime = $resp -> Runtime;
-	$released = $resp -> Released;
-	$genre = $resp -> Genre;
-	$director = $resp -> Director;
-	$writer = $resp -> Writer;
-	$actors = $resp -> Actors;
-	$plot = $resp -> Plot;
-	$language = $resp -> Language;
-	$country = $resp -> Country;
-	$awards = $resp -> Awards;
-	$poster = $resp -> Poster;
-	$value = $resp -> Value;
+	$title = $obj -> {'Title'};
+	$year = $obj -> {'Year'};
+	$rated = $obj -> {'Rated'};
+	$runtime = $obj -> {'Runtime'};
+	$released = $obj -> {'Released'};
+	$genre = $obj -> {'Genre'};
+	$director = $obj -> {'Director'};
+	$writer = $obj -> {'Writer'};
+	$actors = $obj -> {'Actors'};
+	$plot = $obj -> {'Plot'};
+	$language = $obj -> {'Language'};
+	$country = $obj -> {'Country'};
+	$awards = $obj -> {'Awards'};
+	$poster = $obj -> {'Poster'};
+	$value = $obj -> {'Value'};
 
 	//insert movie
 	$query_movie = "INSERT INTO `movies`(`movies_imdbID`, `movies_title`,
@@ -59,11 +61,5 @@ foreach($selected_movies as $movie){
  
  echo "Η Αποθήκευση Έγινε Με Επιτυχία!";
 }
-
-
-	//insert
-	$query_movie = "INSERT INTO movies(movies_id, movies_imdbID  ) 
-				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $movie)."')";
-	mysqli_query($link, $query_movie);
 
 ?>
