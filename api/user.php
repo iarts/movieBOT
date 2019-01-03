@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-include "includes/config.php";
+include "../includes/config.php";
 
 $sql = "SELECT * FROM users 
 		WHERE users_id = '".mysqli_real_escape_string($link, $_GET['user'])."'";

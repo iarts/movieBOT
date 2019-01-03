@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-include "includes/config.php";
+include "../includes/config.php";
 
 $sql = "SELECT * FROM favorites, movies, users 
 		WHERE favorites_users_id = users_id
