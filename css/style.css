@@ -11,3 +11,24 @@
     height: 220px;
   }
 }
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -1;/*image gets behind jumbotron*/
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.indexJumbotron {
+	background-color:   #9ca663!important;
+}
+
+.btn{
+	background-color:   #9ca663;
+}
+
+

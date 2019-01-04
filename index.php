@@ -10,6 +10,8 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <title>movieBOT</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <img src="https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" id="bg" alt="">
+  <!-- Image from unsplash.com artist: Jake Hills -->
 </head>
 <body>
   
@@ -18,9 +20,8 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <div class="container">
 
     <h4 id="result"></h4>
-
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron indexJumbotron">
       <h3 class="text-center">Αναζήτηση Οποιαδήποτε Ταινίας</h3>
       <form id="searchForm">
         <input type="text" class="form-control" id="searchText" placeholder="Αναζήτηση ταινίας ..">
