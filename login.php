@@ -32,6 +32,7 @@
                         
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="button" id="login" >Σύνδεση</button>
+                            &nbsp;&nbsp;&nbsp;<a href="reminder.php">Ξέχασα τον κωδικό μου</a> 
                         </div>
                         
                         <div id="warning" style="height:0px; transition-property:height; transition-duration:0.5s;">
