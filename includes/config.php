@@ -1,9 +1,17 @@
 <?php
 
+//local pc
 $host = "localhost";
 $username = "userM102"; 
 $pass = "SH11mtM8Ocqz0AIw!_"; 
 $db_name = "M102DB2018"; 
+
+/*
+$host = "localhost";
+$username = "moviebot"; 
+$pass = "moviebot1819"; 
+$db_name = "moviebot"; 
+*/
 
 $link = mysqli_connect($host,  $username,  $pass);
 
