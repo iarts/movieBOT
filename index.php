@@ -10,6 +10,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <title>movieBOT</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/starrating.css">
   <img src="https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" id="bg" alt="">
   <!-- Image from unsplash.com artist: Jake Hills -->
 </head>
@@ -95,5 +96,6 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="js/main.js"></script>
   <script src="ajax/ajax.js"></script>
+  <script src="js/starrating.js"></script>
 </body>
 </html>

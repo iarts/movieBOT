@@ -22,6 +22,8 @@ output += `
 </br></br>
 <p>Παρακαλώ Επιλέψτε Για Την Αποθήκευση Της Ταινίας</p>
 Επιλογή: <input type="checkbox" class="get_value" name="movie" value="${movie.imdbID}">
+</br>
+Αξιολόγηση : <x-star-rating value="3" number="5"></x-star-rating>
 </div>
 </div>
 `;
