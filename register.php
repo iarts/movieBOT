@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL & ~E_NOTICE); ?>
+<?php error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING); ?>
 <?php
 session_start();
 if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'])){

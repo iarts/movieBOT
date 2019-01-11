@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL & ~E_NOTICE); ?>
+<?php error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING); ?>
 <!DOCTYPE html>
 <html lang="en">
 
