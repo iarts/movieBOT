@@ -36,7 +36,15 @@
 .fav_genre { /*afora to header text agapimeni katigoria */
 	color: #9dccc6;
 }
+/*account page for account.php related CSS*/
 
+.user_data {
+	color: #42f44e;
+}
+.btn.btn--blue{
+	color: white;
+	
+}
 
 
 

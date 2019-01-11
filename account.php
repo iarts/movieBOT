@@ -99,7 +99,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 			   $url = $site_url.'/api/user.php?user='.$_SESSION['id']; // path to your JSON file
 			   $data = file_get_contents($url); // put the contents of the file into a variable
 			   $userdetails = json_decode($data); // decode the JSON feed																																								
-				echo "<h4 class='text-center'>Στοιχεία Λογαριασμού Χρήστη ".$userdetails[0]->users_email."</h4>";
+				echo "<h4 class='text-center user_data'>Στοιχεία Λογαριασμού Χρήστη ".$userdetails[0]->users_email."</h4>";
                     echo "<form method='POST' action='account.php' onsubmit='return checkIfOk()'>";                    
                         echo "<div class='row row-space'>";
                             echo "<div class='col-2'>";                            
@@ -116,8 +116,8 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
                                     echo "<input class='input--style-2' type='password' id='password' name='password' onKeyUp='fadeout()' value='".$userdetails[0]->users_pass."' disabled>";
                                     ?>
                                 </div>
-                                <button class="btn btn--radius-2 btn--blue" type="button" id="update" onclick="enableAll()">Αλλαγή στοιχείων</button>    
-                                <button class="btn btn--radius-2 btn--blue" type="submit" name="sub" id="store" disabled>Ενημέρωση</button>    
+                                <button class="btn btn--radius-2 btn--blue btn_user_info" type="button" id="update" onclick="enableAll()">Αλλαγή στοιχείων</button>    
+                                <button class="btn btn--radius-2 btn--blue update__user_data" type="submit" name="sub" id="store" disabled>Ενημέρωση</button>    
                             </div>
                         </div>    
                     </form>                    
@@ -166,7 +166,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 	     
 			echo "</div>";
 			echo "<div class='container'>";
-			echo 	"<div class='jumbotron indexJumbotron'>";    	     	
+		   	     	
 			echo 		"<div class='row row-space'>";
 			echo 			"<div class='col-1'>";
 			echo 				"<div class='input-group'>";
@@ -175,7 +175,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 			echo 			"</div>";
 			echo 		"</div>";
 			echo 	"</form>";
-			echo 	"</div>";
+
 			echo "</div>";
 		 }
 	     echo "</div>";
