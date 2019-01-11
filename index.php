@@ -23,7 +23,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
     <h4 id="result"></h4>
   <div class="container">
     <div class="jumbotron indexJumbotron">
-      <h3 class="text-center">Αναζήτηση Οποιαδήποτε Ταινίας</h3>
+      <h3 class="text-center search_movie">Αναζήτηση Οποιαδήποτε Ταινίας</h3>
       <form id="searchForm">
         <input type="text" class="form-control" id="searchText" placeholder="Αναζήτηση ταινίας ..">
       </form>
@@ -33,7 +33,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <div class="container">
 		<form method="POST">
 			<div id="movies" class="row"></div>
-			<button class="btn btn--radius-2 btn--blue" type="button" id="save_favorites">Αποθήκευση</button>
+			<button class="btn btn--radius-2 btn--blue save_button" type="button" id="save_favorites" >Αποθήκευση</button>
 		</form>
   </div>
   
@@ -56,8 +56,9 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 	}
 	
   ?>
-  <h2>Αγαπημένη κατηγορία <?php echo $fav_genre; ?></h2>
-  <br>
+ 
+	<h2 class="fav_genre">Αγαπημένη κατηγορία <?php echo $fav_genre; ?></h2>
+   <br>
 	<div class="container"> 
 		<?php 
 		$curl = curl_init();

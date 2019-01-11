@@ -24,11 +24,19 @@
 }
 
 .indexJumbotron {
-	background-color:   #9ca663!important;
+	background-color:   #07685c!important;
+}
+.search_movie {/*afora ton text titlo tou search box*/
+	color: #9dccc6;
+}
+.save_button{ /*  afora to koumpi apothikeusis*/
+	background-color:   #07685c;
+	color: #9dccc6;
+}
+.fav_genre { /*afora to header text agapimeni katigoria */
+	color: #9dccc6;
 }
 
-.btn{
-	background-color:   #9ca663;
-}
+
 
 
