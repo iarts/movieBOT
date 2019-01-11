@@ -6,11 +6,15 @@ $username = "userM102";
 $pass = "SH11mtM8Ocqz0AIw!_"; 
 $db_name = "M102DB2018"; 
 
+$site_url = "http://localhost/moviebot";
+
 /*
 $host = "localhost";
 $username = "moviebot"; 
 $pass = "moviebot1819"; 
 $db_name = "moviebot"; 
+ 
+$site_url = "http://nireas.it.teithe.gr/moviebot";
 */
 
 $link = mysqli_connect($host,  $username,  $pass);
