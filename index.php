@@ -72,7 +72,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 		curl_close($curl);
 		
 		$json = json_decode($resp);
-		
+		if($json != ""){
 		foreach($json as $obj){
 			foreach($obj as $o){
 			?>
@@ -87,6 +87,7 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 			<?php 
 			}
 		} 
+		}
 		?>
 	</div>
 	<br><br>
