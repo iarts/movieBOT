@@ -14,18 +14,24 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <img src="https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" id="bg" alt="">
   <script src="js/main.js"></script>  
   
-  <script>
+<script>
 	  function enableAll(){		  
 		  x = document.getElementsByTagName('input');
 		  if (document.getElementById('update').innerHTML == 'Αλλαγή στοιχείων'){
 			for (i=0; i<x.length;i++){			 
+			  if (x[i].type == 'checkbox'){
+				  continue;
+			  }				
 			  x[i].disabled = false;
 			}
 			document.getElementById('update').innerHTML = 'Κλείδωμα';
 			document.getElementById('store').disabled = false;
 		  }
 		  else{
-			for (i=0; i<x.length;i++){			 
+			for (i=0; i<x.length;i++){
+			  if (x[i].type == 'checkbox'){
+				  continue;
+			  }				 
 			  x[i].disabled = true;
 			}
 			document.getElementById('update').innerHTML = 'Αλλαγή στοιχείων';			  			  
@@ -34,8 +40,11 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 	  }
 	  
 	  function checkIfOk(){  				
-		 x = document.getElementsByTagName('input');
-		 for (i=0; i<x.length;i++){			 
+		 x = document.getElementsByTagName('input');		 
+		 for (i=0; i<x.length;i++){	
+			  if (x[i].type == 'checkbox'){
+				  continue;
+			  }
 			  if (x[i].value == ""){
 				  alert("Παρακαλώ συμπληρώστε όλα τα πεδία");
 				  x[i].focus();
@@ -44,12 +53,25 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
 		 }
 		 return true;
 	 }	  
-	  function areusure(){  							
-		return (confirm("Θέλετε σίγουρα να αφαιρέσετε την ταινία από τα αγαπημένα σας;!"));
-
+	  function areusure(){  
+		x = document.getElementsByTagName('input');  							
+		flag = false;
+		for (i=0; i<x.length;i++){	
+		  if (x[i].type != 'checkbox'){
+		     continue;
+	      }
+		  if (x[i].checked){
+			  flag = true;
+			  break;
+		  }
+		}
+		if (flag)
+		   return (confirm("Θέλετε σίγουρα να αφαιρέσετε την ταινία από τα αγαπημένα σας;!"));
+		else 
+		   return false;
 	 }		 
   
-  </script>    
+  </script>  
 </head>
 <body>
 	
