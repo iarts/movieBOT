@@ -183,7 +183,17 @@ h6 {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;;
+  background-size: cover;
+}
+.about_us{
+	background: url("https://images.unsplash.com/photo-1524629802380-04f8ec63f471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80") no-repeat center center fixed;
+	/*Image from unsplash.com artist: malmanxd */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	
+	
 }
 
 /* ==========================================================================
@@ -224,6 +234,13 @@ h6 {
 .m-r-45 {
   margin-right: 45px;
 }
+.about_font_styling{
+	color: #138e8c;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+}
+
 
 /* ==========================================================================
    #WRAPPER
