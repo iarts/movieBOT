@@ -75,7 +75,7 @@ let output =`
 ${movie.Plot}
 <hr>
 <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank" class="btn btn-primary">Προβολή IMDB</a>
-<a href="index.html" class="btn btn-default">Επιστροφή στην αναζήτηση</a>
+<a href="index.php" class="btn btn-default">Επιστροφή στην αναζήτηση</a>
 `;
 
 
