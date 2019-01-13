@@ -8,6 +8,7 @@
 			
 			<div class="navbar-header">
 				<a class="navbar-brand"> <i class="fas fa-film"></i> <href="#">MovieBOT</a>
+				
 			</div>
 
 			<div class="header-menu">
@@ -33,7 +34,7 @@
 						<?php
 					}
 					?>
-					
+					<li><a href="about_us.php">About Us</a></li>
 				</ul>
 			</div>
 
