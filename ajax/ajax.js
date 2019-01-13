@@ -7,7 +7,7 @@ $(document).ready(function() {
 		var password = $('#password').val();
 		var repassword = $('#repeat_password').val();
 		var birthday = $('#birthday').val();
-		var gender = $('#gender').val();
+		var gender = 'm';
 		var phone = $('#phone').val();
 		var last_name = $('#last_name').val();
 		var first_name = $('#first_name').val();
