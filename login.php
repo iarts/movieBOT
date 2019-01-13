@@ -15,6 +15,21 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Συνδεθείτε ή <a href="register.php">Δημιουργία λογαριασμού</a></h2>
+                    
+                    <?php
+                    if(isset($_GET['q']) && $_GET['q'] == "activate"){
+						$result = mysqli_query($link, "SELECT users_id FROM users WHERE users_status = '0' AND users_token = '".mysqli_real_escape_string($link, $_GET['rand'])."'");
+						$user = mysqli_fetch_array($result);
+						if(isset($user) && $user['users_id'] != "" && $user['users_id'] > 0){
+							if(mysqli_query($link, "UPDATE users SET users_status = '1' WHERE users_id = '".$user['users_id']."'")){
+								echo "<div class='alert alert-success'>
+								  <strong>Επιτυχία!</strong> Ο λογαριασμός σας έχει ενεργοποιηθεί, μπορείτε να συνδεθείτε!
+								</div>";
+							}
+						}
+					}
+                    ?>
+                    
                     <form method="POST">
                         <div class="row row-space">
                             <div class="col-2">

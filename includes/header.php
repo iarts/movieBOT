@@ -14,27 +14,29 @@
 			<div class="header-menu">
 				<ul class="nav navbar-nav">
 					
-					<li class="active"><a href="index.php">Αρχική</a></li>
+					<li <?php if(basename($_SERVER['PHP_SELF'],'.php') == "index") { echo "class='active'"; } ?> ><a href="index.php">Αρχική</a></li>
 
-					<li><a href="contact.php">Επικοινωνία</a></li>
+					<li <?php if(basename($_SERVER['PHP_SELF'],'.php') == "about_us") { echo "class='active'"; } ?> ><a href="about_us.php">Η ομάδα</a></li>
+
+					<li <?php if(basename($_SERVER['PHP_SELF'],'.php') == "contact") { echo "class='active'"; } ?> ><a href="contact.php">Επικοινωνία</a></li>
 					
 					<?php
 					session_start();
 					if(isset($_SESSION['id']) && isset($_SESSION['user']) && isset($_SESSION['token'])){
 						?>
 							
-							<li><a href="account.php">Ο λογαριασμός μου</a></li>	
+							<li <?php if(basename($_SERVER['PHP_SELF'],'.php') == "account") { echo "class='active'"; } ?> ><a href="account.php">Ο λογαριασμός μου</a></li>	
 							<li><a href="api/logout.php">Αποσύνδεση</a></li>
 							
 						<?php
 					}
 					else{
 						?>
-							<li><a href="register.php">Εγγραφή</a></li>
+							<li <?php if(basename($_SERVER['PHP_SELF'],'.php') == "register") { echo "class='active'"; } ?> ><a href="register.php">Εγγραφή</a></li>
 						<?php
 					}
 					?>
-					<li><a href="about_us.php">About Us</a></li>
+					
 				</ul>
 			</div>
 

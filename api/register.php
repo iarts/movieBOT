@@ -51,7 +51,7 @@ if(isset($_POST['register'])){
 	$random=random_text();
 	
 	if(mysqli_query($link, "INSERT INTO users 
-						(users_email, users_pass, users_token, users_fname, users_lname, users_birthday, users_gender, users_phone) 
+						(users_email, users_pass, users_token, users_fname, users_lname, users_birthday, users_gender, users_phone, users_status) 
 						VALUES 
 						('".mysqli_real_escape_string($link, $_POST['email'])."',
 						'".mysqli_real_escape_string($link, $_POST['password'])."',
@@ -60,7 +60,8 @@ if(isset($_POST['register'])){
 						'".mysqli_real_escape_string($link, $_POST['last_name'])."',
 						'".mysqli_real_escape_string($link, date("Y-m-d", strtotime($_POST['birthday'])))."',
 						'".mysqli_real_escape_string($link, $_POST['gender'])."',
-						'".mysqli_real_escape_string($link, $_POST['phone'])."')"))
+						'".mysqli_real_escape_string($link, $_POST['phone'])."',
+						'0')"))
 						{
 						
 								$subject = "Εγγραφή στο movieBOT";

@@ -196,7 +196,13 @@ $('.get_value').each(function(){
 	   method: "POST",
 		data:{insert:insert},
 		 success:function(data){
-		  $('#result').html(data);
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+			if(data == "success"){
+				$('#result').html("<div class='alert alert-success'><strong>Επιτυχία!</strong> Η Αποθήκευση Έγινε Με Επιτυχία!</div>");
+			}
+			else{
+				$('#result').html("<div class='alert alert-danger'><strong>Ωπ!</strong> Μήπως η ταινία υπάρχει ήδη στην λίστα!</div>");
+			}
 		 }
 	  });
 });

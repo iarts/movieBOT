@@ -62,31 +62,36 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
    <br>
 	<div class="container"> 
 		<?php 
-		$curl = curl_init();
-		curl_setopt_array($curl, array(
-			CURLOPT_CUSTOMREQUEST => "GET",
-			CURLOPT_RETURNTRANSFER => 1,
-			CURLOPT_URL => "https://www.omdbapi.com/?s=".$fav_genre."&apikey=34b63443"
-		));
-		$resp = curl_exec($curl);
-		curl_close($curl);
-		
-		$json = json_decode($resp);
-		if($json != ""){
-		foreach($json as $obj){
-			foreach($obj as $o){
-			?>
-			<div class="col-md-4">
-				<div class="well text-center">
-					<img src="<?php echo $o -> {'Poster'}; ?>" height="200">
-					<h5><?php echo $o -> {'Title'} . " (" . $o -> {'Year'} . ")"; ?></h5>
-					<a onclick="movieSelected('<?php echo $o -> {'imdbID'};?>')" class="btn btn-primary" href="#">Λεπτομέρειες ταινίας</a>
-					</br>
-				</div>
-			</div>
-			<?php 
+		if($fav_genre != ""){
+			$myArray = explode(', ', $fav_genre);
+			foreach($myArray as $item){
+				$curl = curl_init();
+				curl_setopt_array($curl, array(
+					CURLOPT_CUSTOMREQUEST => "GET",
+					CURLOPT_RETURNTRANSFER => 1,
+					CURLOPT_URL => "https://www.omdbapi.com/?s=".$item."&apikey=34b63443"
+				));
+				$resp = curl_exec($curl);
+				curl_close($curl);
+				
+				$json = json_decode($resp);
+				if($json != ""){
+				foreach($json as $obj){
+					foreach($obj as $o){
+					?>
+					<div class="col-md-4">
+						<div class="well text-center">
+							<img src="<?php echo $o -> {'Poster'}; ?>" height="200">
+							<h5><?php echo $o -> {'Title'} . " (" . $o -> {'Year'} . ")"; ?></h5>
+							<a onclick="movieSelected('<?php echo $o -> {'imdbID'};?>')" class="btn btn-primary" href="#">Λεπτομέρειες ταινίας</a>
+							</br>
+						</div>
+					</div>
+					<?php 
+					}
+				} 
+				}
 			}
-		} 
 		}
 		?>
 	</div>

@@ -4,7 +4,7 @@ require_once '../includes/config.php';
 
 session_start();
 
-if(isset($_POST["insert"]) && isset($_SESSION['id'])){
+if(isset($_POST["insert"]) && $_POST["insert"] != "" && isset($_SESSION['id'])){
 	
 $selected_movies = explode(",", $_POST["insert"]);
 
@@ -39,28 +39,33 @@ foreach($selected_movies as $movie){
 	$poster = $obj -> {'Poster'};
 	$value = $obj -> {'Value'};
 
-	//insert movie
-	$query_movie = "INSERT INTO `movies`(`movies_imdbID`, `movies_title`,
-	 `movies_genre`, `movies_released`, `movies_rated`, `movies_writer`, `movies_director`,
-	  `movies_actors`, `movies_runtime`, `movies_plot`, `movies_poster`)
-				VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $title)."'
-				, '".mysqli_real_escape_string($link, $genre)."', '".mysqli_real_escape_string($link, $released)."'
-				, '".mysqli_real_escape_string($link, $rated)."', '".mysqli_real_escape_string($link, $writer)."'
-				, '".mysqli_real_escape_string($link, $director)."', '".mysqli_real_escape_string($link, $actors)."'
-				, '".mysqli_real_escape_string($link, $runtime)."', '".mysqli_real_escape_string($link, $plot)."'
-				, '".mysqli_real_escape_string($link, $poster)."')";
-	mysqli_query($link, $query_movie);
+	$check_result = mysqli_query($link, "SELECT movies_imdbID FROM movies WHERE movies_imdbID = '".mysqli_real_escape_string($link, $movie)."'");
 	
-	
-	$last_id = mysqli_insert_id($link);
-	
-	//insert favorite
-	$query = "INSERT INTO favorites(favorites_users_id, favorites_movies_id ) 
-				VALUES ('".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $last_id)."')";
-	mysqli_query($link, $query);
+	if(mysqli_num_rows($check_result) == 0){					
+		//insert movie
+		$query_movie = "INSERT INTO `movies`(`movies_imdbID`, `movies_title`,
+		 `movies_genre`, `movies_released`, `movies_rated`, `movies_writer`, `movies_director`,
+		  `movies_actors`, `movies_runtime`, `movies_plot`, `movies_poster`)
+					VALUES ('".mysqli_real_escape_string($link, $movie)."', '".mysqli_real_escape_string($link, $title)."'
+					, '".mysqli_real_escape_string($link, $genre)."', '".mysqli_real_escape_string($link, $released)."'
+					, '".mysqli_real_escape_string($link, $rated)."', '".mysqli_real_escape_string($link, $writer)."'
+					, '".mysqli_real_escape_string($link, $director)."', '".mysqli_real_escape_string($link, $actors)."'
+					, '".mysqli_real_escape_string($link, $runtime)."', '".mysqli_real_escape_string($link, $plot)."'
+					, '".mysqli_real_escape_string($link, $poster)."')";
+		mysqli_query($link, $query_movie);
+		
+		
+		$last_id = mysqli_insert_id($link);
+		
+		//insert favorite
+		$query = "INSERT INTO favorites(favorites_users_id, favorites_movies_id ) 
+					VALUES ('".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $last_id)."')";
+		if(mysqli_query($link, $query)){
+			 echo "success";
+		}
+	}
 }
  
- echo "Η Αποθήκευση Έγινε Με Επιτυχία!";
 }
 
 ?>
