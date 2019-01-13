@@ -7,7 +7,7 @@ $(document).ready(function() {
 		var password = $('#password').val();
 		var repassword = $('#repeat_password').val();
 		var birthday = $('#birthday').val();
-		var gender = $('#gender').val();
+		var gender = 'm';
 		var phone = $('#phone').val();
 		var last_name = $('#last_name').val();
 		var first_name = $('#first_name').val();
@@ -199,9 +199,6 @@ $('.get_value').each(function(){
 			$("html, body").animate({ scrollTop: 0 }, "slow");
 			if(data == "success"){
 				$('#result').html("<div class='alert alert-success'><strong>Επιτυχία!</strong> Η Αποθήκευση Έγινε Με Επιτυχία!</div>");
-			}
-			else{
-				$('#result').html("<div class='alert alert-danger'><strong>Ωπ!</strong> Μήπως η ταινία υπάρχει ήδη στην λίστα!</div>");
 			}
 		 }
 	  });

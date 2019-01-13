@@ -69,7 +69,7 @@ if(isset($_POST['register'])){
 													
                                 $msg ="<p>Καλωσήρθατε στο movieBOT ".$_POST['first_name']." ".$_POST['last_name']."</p>";
 								$msg .= "<p>Για να ολοκληρωθεί η εγγραφή σας πατήστε στο παρακάτω σύνδεσμο<br>
-								http://localhost/movieBOT/login.php?q=activate&rand=".$random." </p>";
+								".$site_url."/login.php?q=activate&rand=".$random." </p>";
 								
 								include "../PHPMailer/PHPMailerAutoload.php";
 								$mail = new PHPMailer();
