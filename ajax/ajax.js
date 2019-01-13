@@ -200,9 +200,6 @@ $('.get_value').each(function(){
 			if(data == "success"){
 				$('#result').html("<div class='alert alert-success'><strong>Επιτυχία!</strong> Η Αποθήκευση Έγινε Με Επιτυχία!</div>");
 			}
-			else{
-				$('#result').html("<div class='alert alert-danger'><strong>Ωπ!</strong> Μήπως η ταινία υπάρχει ήδη στην λίστα!</div>");
-			}
 		 }
 	  });
 });
