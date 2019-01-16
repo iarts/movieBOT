@@ -34,7 +34,6 @@ if(!isset($_SESSION['id']) && !isset($_SESSION['user']) && !isset($_SESSION['tok
   <div class="container">
 		<form method="POST">
 			<div id="movies" class="row"></div>
-			<button class="btn btn--radius-2 btn--blue save_button" type="button" id="save_favorites" >Αποθήκευση</button>
 		</form>
   </div>
   

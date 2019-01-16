@@ -27,7 +27,9 @@ output += `
 </div>
 </div>
 `;
-});
+}
+output += `<button class="btn btn--radius-2 btn--blue save_button" type="button" id="save_favorites" >Αποθήκευση</button>`;
+);
 
 $('#movies').html(output);
   })
